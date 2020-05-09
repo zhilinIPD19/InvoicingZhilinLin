@@ -1,0 +1,89 @@
+﻿<Window x:Class="WpfInvoicingZhilin.ViewItem"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfInvoicingZhilin"
+        mc:Ignorable="d"
+        Title="ViewItem" Height="700" Background="AliceBlue" Width="800">
+    <Grid>
+        <DockPanel>
+            <StackPanel DockPanel.Dock="Top" Height="150" >
+                <StackPanel.Background>
+                    <ImageBrush ImageSource="C:\Users\tanna\source\InvoicingZhilin\InvoicingZhilinLin\WpfInvoicingZhilin\light.jpg" Stretch="UniformToFill"/>
+                </StackPanel.Background>
+                <TextBlock  FontSize="50" HorizontalAlignment="Center" VerticalAlignment="Center"
+                           FontStyle="Italic" FontWeight="Bold" Foreground="Blue" Height="80" >Super Lighting Company</TextBlock>
+                <Menu FontSize="20" Margin="0,40" FontWeight="Bold" FontStyle="Italic" >
+                    <MenuItem Header="Home" Click="HomePage_Click"/>
+                    <MenuItem Header="Invoice" >
+                        <MenuItem Header="Edit" Click="InvoiceCreate_Click"/>
+                        <Separator />
+                        <MenuItem Header="View" Click="InvoiceView_Click"/>
+                    </MenuItem>
+                    <MenuItem Header="Customer" >
+                        <MenuItem Header="Edit" Click="CustomerCreate_Click"/>
+                        <Separator />
+                        <MenuItem Header="View" Click="CustomerView_Click"/>
+                    </MenuItem>
+                    <MenuItem Header="Product" >
+                        <MenuItem Header="Edit" Click="ItemCreate_Click"/>
+                        <Separator />
+                        <MenuItem Header="View" Click="ItemView_Click"/>
+                    </MenuItem>
+                </Menu>
+            </StackPanel>
+            <Grid HorizontalAlignment="Center" VerticalAlignment="Center" Width="400">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="300"/>
+                    <RowDefinition Height="auto"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+
+                </Grid.ColumnDefinitions>
+
+                <TextBlock HorizontalAlignment="Center" Grid.Row="0" Grid.ColumnSpan="5" FontSize="30">Item List</TextBlock>
+                <DataGrid x:Name="dataGridView" Background="BurlyWood"
+                  ItemsSource="{Binding ItemList}" 
+                  AutoGenerateColumns="False" 
+                  ScrollViewer.HorizontalScrollBarVisibility="Visible"  
+                  ScrollViewer.VerticalScrollBarVisibility="Visible"
+                  ScrollViewer.CanContentScroll="True"
+                  AlternatingRowBackground="LightBlue" IsReadOnly="True" 
+                  Grid.Row="2" Grid.ColumnSpan="5">
+                    <DataGrid.Columns >
+                        <DataGridTextColumn x:Name="IdColumn"
+                                    Header="Id"
+                                    Binding="{Binding Id}"
+                                    Width="100"/>
+                        <DataGridTextColumn x:Name="NameColumn"
+                                    Binding="{Binding Name}"
+                                    Header="Name"
+                                    Width="100"/>
+                        <DataGridTextColumn x:Name="DescriptionColumn"
+                                    Binding="{Binding Description}"
+                                    Header="Description"
+                                    Width="100"/>
+                        <DataGridTextColumn x:Name="PriceColumn"
+                                    Binding="{Binding Price}"
+                                    Header="Price"
+                                    Width="100"/>
+                    </DataGrid.Columns>
+                </DataGrid>
+                <Button Grid.Row="3" Grid.Column="1" x:Name="BtnPrint" Content="Print" Width="40" Margin="5" Background="BurlyWood" ></Button>
+                <Button Click="BtnEdit_Click" Grid.Row="3" Grid.Column="2" x:Name="BtnEdit" Content="Edit" Width="40" Margin="5" Background="BurlyWood"></Button>
+                <Button Click="BtnDelete_Click" Grid.Row="3" Grid.Column="3" x:Name="BtnDelete" Content="Delete" Width="40" Margin="5" Background="BurlyWood"></Button>
+            </Grid>
+
+
+        </DockPanel>
+
+    </Grid>
+</Window>
