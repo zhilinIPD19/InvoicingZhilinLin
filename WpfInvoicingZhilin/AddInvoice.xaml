@@ -59,7 +59,7 @@
                                 </DataTemplate>
                             </ComboBox.ItemTemplate>
                         </ComboBox>
-                        <TextBlock x:Name="txtCusInfo" Grid.Row="2" HorizontalAlignment="Center" FontSize="15" FontStyle="Italic" Foreground="Black"  Text="Customer Infomation shows here" TextAlignment="Left" />
+                        <TextBlock x:Name="txtCusInfo" Grid.Row="2" HorizontalAlignment="Center" FontSize="10" FontStyle="Italic" Foreground="Black"  Text="Customer Infomation shows here" TextAlignment="Left" />
 
                     </Grid>
                 </Border>

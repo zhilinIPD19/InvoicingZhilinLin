@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Common;
 using System.Data.Entity.Migrations;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -96,7 +98,8 @@ namespace WpfInvoicingZhilin
         #endregion
 
         private void OnSave_Click(object sender, RoutedEventArgs e)
-        {   //many to many relationship insert
+        {
+            //many to many relationship insert
             using (InvoicingZLEntities context = new InvoicingZLEntities())
             {
                 Invoice invoice = new Invoice()
@@ -119,9 +122,32 @@ namespace WpfInvoicingZhilin
                     context.SaveChanges();
                 }
                 System.Windows.MessageBox.Show("Saved!!!");
+
+
+                DialogResult result;
+                result = System.Windows.Forms.MessageBox.Show("Do you want to save file?", "ZhilinInvoicing", MessageBoxButtons.YesNo, MessageBoxIcon.Question); 
+                if (result == System.Windows.Forms.DialogResult.No)
+                {
+                    return;
+                }
+                if (result == System.Windows.Forms.DialogResult.Yes)
+                {
+                    
+                    saveFile("Company Name: "+ selectedCustomer.Name + "\n" + "Address: 1783 " + selectedCustomer.Address +"\n"+"Invoice: # "+ invoice.Id +"\n"+ "Invoice Date: "+ invoice.SaleDate + "\n " +"TotalAmount: "+invoice.Amount);
+                }
             }
         }
- 
+        public void saveFile(string str)
+        {
+            // Save File to .txt 
+            string dirParameter = AppDomain.CurrentDomain.BaseDirectory + @"\file.txt";
+            FileStream fParameter = new FileStream(dirParameter, FileMode.Create, FileAccess.Write);
+            StreamWriter m_WriterParameter = new StreamWriter(fParameter);
+            m_WriterParameter.BaseStream.Seek(0, SeekOrigin.End);
+            m_WriterParameter.Write(str);
+            m_WriterParameter.Flush();
+            m_WriterParameter.Close();
+        }
 
         private void OnAdd_Click(object sender, RoutedEventArgs e)
         {
