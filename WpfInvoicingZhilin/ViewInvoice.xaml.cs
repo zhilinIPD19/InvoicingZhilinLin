@@ -46,9 +46,6 @@ namespace WpfInvoicingZhilin
 
         private void InvoiceView_Click(object sender, RoutedEventArgs e)
         {
-            ViewInvoice viewInvoice = new ViewInvoice(); //create your new form.
-            viewInvoice.Show(); //show the new form.
-            this.Close();
         }
 
         private void CustomerCreate_Click(object sender, RoutedEventArgs e)

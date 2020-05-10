@@ -52,9 +52,7 @@ namespace WpfInvoicingZhilin
         #region MenuClicks
         private void ItemView_Click(object sender, RoutedEventArgs e)
         {
-            ViewItem viewItem = new ViewItem(); //create your new form.
-            viewItem.Show(); //show the new form.
-            this.Close();
+           
         }
 
         private void ItemCreate_Click(object sender, RoutedEventArgs e)

@@ -50,9 +50,7 @@ namespace WpfInvoicingZhilin
 
         private void CustomerCreate_Click(object sender, RoutedEventArgs e)
         {
-            AddCustomer addcus = new AddCustomer(); //create your new form.
-            addcus.Show(); //show the new form.
-            this.Close();
+            
         }
 
         private void CustomerView_Click(object sender, RoutedEventArgs e)

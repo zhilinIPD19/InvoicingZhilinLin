@@ -50,9 +50,7 @@ namespace WpfInvoicingZhilin
 
         private void ItemCreate_Click(object sender, RoutedEventArgs e)
         {
-            AddItem addItem = new AddItem(); //create your new form.
-            addItem.Show(); //show the new form.
-            this.Close();
+          
         }
 
         private void InvoiceView_Click(object sender, RoutedEventArgs e)

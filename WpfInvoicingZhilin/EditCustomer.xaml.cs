@@ -21,13 +21,6 @@ namespace WpfInvoicingZhilin
     public partial class EditCustomer : Window
     {
         ICustomerService cs = new CustomerService();
-        
-
-        public EditCustomer()
-        {
-            InitializeComponent();
-
-        }
 
         public EditCustomer(string setValueForTxtId, string setValueForTxtName, string setValueForTxtAddress, string setValueForTxtIsMemership)
         {
@@ -35,7 +28,7 @@ namespace WpfInvoicingZhilin
             this.TxtCustomerId.Text = setValueForTxtId;
             this.TxtAddress.Text = setValueForTxtAddress;
             this.TxtName.Text = setValueForTxtName;
-            this.IsMemberCheck.IsChecked = setValueForTxtIsMemership == "true" ? true : false;
+            this.IsMemberCheck.IsChecked = setValueForTxtIsMemership == "true" ? true : false;            
         }
 
 

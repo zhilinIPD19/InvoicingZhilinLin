@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfInvoicingZhilin"
         mc:Ignorable="d"
-        Title="AddInvoice" Height="700" Background="AliceBlue" Width="800">
+        Title="AddInvoice" Height="700" Background="AliceBlue" WindowStartupLocation="CenterScreen" Width="800">
     <Grid>
         <DockPanel>
             <StackPanel DockPanel.Dock="Top" Height="150" >
@@ -17,17 +17,17 @@
                 <Menu FontSize="20" Margin="0,40" FontWeight="Bold" FontStyle="Italic" >
                     <MenuItem Header="Home" Click="HomePage_Click"/>
                     <MenuItem Header="Invoice" >
-                        <MenuItem Header="Create" Click="InvoiceCreate_Click"/>
+                        <MenuItem Header="Edit" Click="InvoiceCreate_Click"/>
                         <Separator />
                         <MenuItem Header="View" Click="InvoiceView_Click"/>
                     </MenuItem>
                     <MenuItem Header="Customer" >
-                        <MenuItem Header="Create" Click="CustomerCreate_Click"/>
+                        <MenuItem Header="Edit" Click="CustomerCreate_Click"/>
                         <Separator />
                         <MenuItem Header="View" Click="CustomerView_Click"/>
                     </MenuItem>
-                    <MenuItem Header="Product" >
-                        <MenuItem Header="Create" Click="ItemCreate_Click"/>
+                    <MenuItem Header="Item" >
+                        <MenuItem Header="Edit" Click="ItemCreate_Click"/>
                         <Separator />
                         <MenuItem Header="View" Click="ItemView_Click"/>
                     </MenuItem>

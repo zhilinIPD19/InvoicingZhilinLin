@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfInvoicingZhilin"
         mc:Ignorable="d"
-        Title="EditCustomer" Height="700" Background="AliceBlue" Width="800">
+        Title="EditCustomer" Height="700" Background="AliceBlue" WindowStartupLocation="CenterScreen" Width="800">
     <Grid>
         <DockPanel>
             <StackPanel DockPanel.Dock="Top" Height="150" >
@@ -26,7 +26,7 @@
                         <Separator />
                         <MenuItem Header="View" Click="CustomerView_Click"/>
                     </MenuItem>
-                    <MenuItem Header="Product" >
+                    <MenuItem Header="Item" >
                         <MenuItem Header="Edit" Click="ItemCreate_Click"/>
                         <Separator />
                         <MenuItem Header="View" Click="ItemView_Click"/>
@@ -55,13 +55,13 @@
                         </Grid.RowDefinitions>
                         <TextBlock Grid.Row="0" Grid.ColumnSpan="2" HorizontalAlignment="Center" FontSize="30" VerticalAlignment="Center">Edit a Customer</TextBlock>
                         <Label Grid.Row="1" Grid.Column="0" Content="Id" IsEnabled="False" HorizontalAlignment="Right" VerticalAlignment="Center"/>
-                        <TextBox Grid.Row="1" Grid.Column="1" x:Name="TxtCustomerId" Width="150" Margin="10" HorizontalAlignment="Left" VerticalAlignment="Center" Text="{Binding Customer.Id}" />
+                        <TextBox Grid.Row="1" Grid.Column="1" x:Name="TxtCustomerId" Width="150" Margin="10" HorizontalAlignment="Left" VerticalAlignment="Center" />
                         <Label Grid.Row="2" Grid.Column="0" Content="Name" HorizontalAlignment="Right" VerticalAlignment="Center"/>
-                        <TextBox x:Name="TxtName" Grid.Row="2" Grid.Column="1" Width="150" Margin="10" HorizontalAlignment="Left" VerticalAlignment="Center"  Text="{Binding Customer.Name}" />
+                        <TextBox x:Name="TxtName" Grid.Row="2" Grid.Column="1" Width="150" Margin="10" HorizontalAlignment="Left" VerticalAlignment="Center"   />
                         <Label Grid.Row="3" Grid.Column="0" Content="Address" HorizontalAlignment="Right" VerticalAlignment="Center"/>
-                        <TextBox x:Name="TxtAddress" Grid.Row="3" Grid.Column="1" Width="150" Margin="10" HorizontalAlignment="Left" VerticalAlignment="Center" Text="{Binding Customer.Address}" />
+                        <TextBox x:Name="TxtAddress" Grid.Row="3" Grid.Column="1" Width="150" Margin="10" HorizontalAlignment="Left" VerticalAlignment="Center"  />
                         <Label Grid.Row="4" Grid.Column="0" Content="IsMember" HorizontalAlignment="Right" VerticalAlignment="Center"/>
-                        <CheckBox x:Name="IsMemberCheck" Grid.Row="4" Grid.Column="1" Width="150" Margin="10" HorizontalAlignment="Left" Content="Membership" VerticalAlignment="Center" IsChecked="{Binding Customer.IsMember}" >
+                        <CheckBox x:Name="IsMemberCheck" Grid.Row="4" Grid.Column="1" Width="150" Margin="10" HorizontalAlignment="Left" Content="Membership" VerticalAlignment="Center"  >
                         </CheckBox>
                         <Button x:Name="Update" Content="Update" Grid.Row="5" Grid.ColumnSpan="3" Width="75" Background="AliceBlue" Margin="10" Click="Update_Click"/>
                     </Grid>

@@ -84,16 +84,12 @@ namespace WpfInvoicingZhilin
 
         private void InvoiceCreate_Click(object sender, RoutedEventArgs e)
         {
-            AddInvoice addInvoice = new AddInvoice(); //create your new form.
-            addInvoice.Show(); //show the new form.
-            this.Close();
+         
         }
 
         private void HomePage_Click(object sender, RoutedEventArgs e)
         {
-            AddInvoice addInvoice = new AddInvoice(); //create your new form.
-            addInvoice.Show(); //show the new form.
-            this.Close();
+            
         }
         #endregion
 

@@ -32,13 +32,15 @@ namespace WpfInvoicingZhilin
         private void BtnEdit_Click(object sender, RoutedEventArgs e)
         {
             object item = dataGridView.SelectedItem;
+          
             string setValueForTxtId = (dataGridView.SelectedCells[0].Column.GetCellContent(item) as TextBlock).Text;
             string setValueForTxtName = (dataGridView.SelectedCells[1].Column.GetCellContent(item) as TextBlock).Text;
             string setValueForTxtAddress = (dataGridView.SelectedCells[2].Column.GetCellContent(item) as TextBlock).Text;
             string setValueForTxtIsMemership = (dataGridView.SelectedCells[3].Column.GetCellContent(item) as TextBlock).Text;
-            EditCustomer ec = new EditCustomer(setValueForTxtId, setValueForTxtName, setValueForTxtAddress, setValueForTxtIsMemership);        
-            ec.Show();
+            EditCustomer ec = new EditCustomer(setValueForTxtId, setValueForTxtName, setValueForTxtAddress, setValueForTxtIsMemership);
             this.Close();
+            ec.Show();
+            
         }
 
         private void BtnDelete_Click(object sender, RoutedEventArgs e)
@@ -95,9 +97,7 @@ namespace WpfInvoicingZhilin
 
         private void CustomerView_Click(object sender, RoutedEventArgs e)
         {
-            ViewCustomer viewcus = new ViewCustomer(); //create your new form.
-            viewcus.Show(); //show the new form.
-            this.Close();
+         
         }
 
         private void InvoiceCreate_Click(object sender, RoutedEventArgs e)
