@@ -110,5 +110,8 @@ CREATE TABLE [dbo].[Invoice_Item] (
 	CONSTRAINT [FK_Item_Invoice] FOREIGN KEY ([ItemId] ) REFERENCES [dbo].[Item] ([Id])
 );
 
-
+Alter
+[dbo].[Invoice_Item] (Table)
+Create
+[dbo].[PK_Invoice_Item] (Primary Key)
 
